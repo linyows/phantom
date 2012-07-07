@@ -1,8 +1,8 @@
 Phantom
 =======
 
-Phantom is a markdown parser and userscript.
-Phantom is to parse the div there is a `#! md` first.
+Phantom is a markdown parser and userscript.  
+Phantom is to parse the div there is a `#! md` first.  
 Phantom is powerd by jquery and pagedown.
 
 Browser
