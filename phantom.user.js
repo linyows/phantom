@@ -134,7 +134,7 @@ function userScript()
                                 .attr('id', 'original' + i)
                                 .html($(this).html()).hide();
       var switcher = $('<p/>').addClass('switcher')
-                              .html($('<a/>').attr('href', '#')
+                              .html($('<a/>').attr('href', 'javascript:void(0)')
                                              .attr('onclick', '$("#original' + i + '").slideToggle();')
                                              .html('original'));
 
