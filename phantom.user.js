@@ -2,10 +2,10 @@
 // @name           Phantom
 // @description    Markdown Parser.
 // @namespace      linyows
-// @include        http://*
-// @include        https://*
+// @include        http://tanpaku.grouptube.jp/*
+// @include        https://tanpaku.grouptube.jp/*
 // @author         linyows <linyows@gmail.com>
-// @version        1.0.0
+// @version        1.0.1
 // ==/UserScript==
 
 function useLibrary(callback)
@@ -122,10 +122,17 @@ function userScript()
 
   var i = 0;
   $('div').each(function(){
-    var text = $(this).text().replace(/(^\s+)|(\s+$)/g, '').replace(/\b(a\w*)/gi, "$1");
+    var text = $(this).text()
+                      .replace(/(^\s+)|(\s+$)/g, '')
+                      .replace(/\b(a\w*)/gi, '$1')
+                      .replace(/(\n)/gi, '  $1');// GitHub Flavored Markdown
+
     if (text.match(/^#! md/)) {
       i++;
-      text = text.replace(/^(#! md)/, '');
+      text = text.replace(/^(#! md)/, '')
+                 .replace(/[`|~]{3}(\w+)/, '<pre class="$1">')
+                 .replace(/[`|~]{3}/, '</pre>')
+                 .replace(/>\s{2}(\n)/gi, '>$1');
       var converter = new Markdown.Converter();
       var parsed = $('<div/>').addClass('parsed')
                               .attr('id', 'parsed' + i)
