@@ -1,11 +1,11 @@
 // ==UserScript==
 // @name           Phantom
-// @description    Markdown Parser.
+// @description    Phantom is Github Flavored Markdown Parser.
 // @namespace      linyows
-// @include        http://tanpaku.grouptube.jp/*
-// @include        https://tanpaku.grouptube.jp/*
+// @include        http://*
+// @include        https://*
 // @author         linyows <linyows@gmail.com>
-// @version        1.0.1
+// @version        1.0.2
 // ==/UserScript==
 
 function useLibrary(callback)
