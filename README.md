@@ -17,6 +17,8 @@ Install
 
 http://userscripts.org/scripts/show/137900
 
+demo: https://dl.dropbox.com/u/71722/markdown.html
+
 License
 -------
 
